@@ -6,7 +6,7 @@
 #include <string>
 using namespace std;
 
-constexpr int sub(int curyear,int year)
+constexpr int sub(int curyear, int year)
 {
 	return(curyear - year);
 }
@@ -15,7 +15,7 @@ int main()
 {
 
 	string title, author;
-	int	pages, year;
+	int	pages, year, curyear;
 
 	cout << "Please type in the title of a book: ";
 	getline(cin, title);
@@ -25,7 +25,9 @@ int main()
 	cin >> year;
 	cout << "How many pages does this book have: ";
 	cin >> pages;
-	const int bage = sub(2018, year);
+	cout <<"What year is it: ";
+	cin >> curyear;
+	const int bage = sub(curyear, year);
 	if (bage < 10) {
 		cout << "This book is younger than ten years old!!!!" << endl;
 	}
@@ -42,4 +44,4 @@ int main()
 		cout << "This is a long book!!!!!!" << endl;
 	}
 	return(0);
-	}
+}
