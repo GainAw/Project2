@@ -4,26 +4,42 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
-#include <ctime>
 using namespace std;
+
+constexpr int sub(int curyear,int year)
+{
+	return(curyear - year);
+}
 
 int main()
 {
-	
+
 	string title, author;
 	int	pages, year;
-	
 
-    cout << "Please type in the title of a book: ";
-	cin >> title;
+	cout << "Please type in the title of a book: ";
+	getline(cin, title);
 	cout << "Please type in the title of the author: ";
-	cin >> author;
+	getline(cin, author);
 	cout << "When was this book published: ";
 	cin >> year;
 	cout << "How many pages does this book have: ";
 	cin >> pages;
-	int bage;
-
-	cout << "" ;
-	
-}
+	const int bage = sub(2018, year);
+	if (bage < 10) {
+		cout << "This book is younger than ten years old!!!!" << endl;
+	}
+	else {
+		cout << "This book is aleast ten years old!" << endl;
+	}
+	if (pages < 100) {
+		cout << "This is a short book!" << endl;
+	}
+	else if (100 <= pages < 300) {
+		cout << "This book is an average book!" << endl;
+	}
+	else {
+		cout << "This is a long book!!!!!!" << endl;
+	}
+	return(0);
+	}
